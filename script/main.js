@@ -50,4 +50,18 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
+    const inputs = document.querySelectorAll('input[required], textarea[required]');
+
+    inputs.forEach(input => {
+        input.addEventListener('invalid', (e) => {
+            e.target.setCustomValidity("Please fill out this field.");
+        });
+
+        input.addEventListener('input', (e) => {
+            e.target.setCustomValidity("");
+            
+        });
+    });
+
 });
+
