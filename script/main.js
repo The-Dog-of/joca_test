@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
             const btn = form.querySelector('button');
             const originalText = btn.innerText;
 
-            btn.innerText = "ENVIANDO...";
+            btn.innerText = "SENDING...";
             btn.disabled = true;
             btn.style.opacity = "0.7";
             statusMsg.innerText = "";
@@ -29,14 +29,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 if (response.ok) {
                     statusMsg.style.color = "#ffffff";
-                    statusMsg.innerText = "✓ Mensagem enviada com sucesso!";
+                    statusMsg.innerText = "✓ Message sent successfully!";
                     form.reset();
                 } else {
-                    throw new Error('Erro na resposta da API');
+                    throw new Error('Error in API response');
                 }
             } catch (error) {
                 statusMsg.style.color = "#ff4444";
-                statusMsg.innerText = "Erro ao enviar. Tente novamente.";
+                statusMsg.innerText = "Error sending. Please try again.";
                 console.error("Erro:", error);
             } finally {
                 btn.innerText = originalText;
@@ -49,4 +49,5 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     }
+
 });
