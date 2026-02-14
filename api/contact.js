@@ -7,13 +7,13 @@ export default async function handler(req, res) {
         const { name, contact, message } = req.body;
 
         if (!name || !contact || !message) {
-            return res.status(400).json({ message: 'Todos os campos são obrigatórios.' });
+            return res.status(400).json({ message: 'All fields are required..' });
         }
 
         const webhookUrl = process.env.DISCORD_WEBHOOK_URL;
 
         if (!webhookUrl) {
-            return res.status(500).json({ message: 'Erro de configuração no servidor.' });
+            return res.status(500).json({ message: 'Server configuration error..' });
         }
 
         const payload = {
@@ -21,14 +21,14 @@ export default async function handler(req, res) {
             avatar_url: "https://w0.peakpx.com/wallpaper/128/836/HD-wallpaper-meliodas-da-dragao-ira-nanatsu-no-pecado-taizai.jpg",
             embeds: [
                 {
-                    title: "🔔 Novo Contato (WebSite)",
+                    title: "🔔 New Contact (WebSite)",
                     color: 3092790,
                     fields: [
-                        { name: "👤 Nome", value: name, inline: true },
-                        { name: "📱 Contato", value: contact, inline: true },
-                        { name: "📄 Mensagem", value: message }
+                        { name: "👤 Name", value: name, inline: true },
+                        { name: "📱 Contact", value: contact, inline: true },
+                        { name: "📄 Message", value: message }
                     ],
-                    footer: { text: "Enviado via API Segura" },
+                    footer: { text: "Send By Portfolio" },
                     timestamp: new Date().toISOString()
                 }
             ]
@@ -41,13 +41,14 @@ export default async function handler(req, res) {
         });
 
         if (discordResponse.ok) {
-            return res.status(200).json({ message: 'Sucesso!' });
+            return res.status(200).json({ message: 'Success!' });
         } else {
-            return res.status(500).json({ message: 'Erro ao contatar Discord.' });
+            return res.status(500).json({ message: 'Wrong to contact the Discord.' });
         }
 
     } catch (error) {
         console.error(error);
         return res.status(500).json({ message: 'Erro interno do servidor.' });
     }
+
 }
