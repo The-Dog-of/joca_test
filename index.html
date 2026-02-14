@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo do Joquinha</title>
+    
+    <link rel="stylesheet" href="static/style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">JOCA</div>
+        <ul class="nav-links">
+            <li><a href="#about">Sobre</a></li>
+            <li><a href="#projects">Projetos</a></li>
+            <li><a href="#contact" class="btn-nav">Contato</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <span class="subtitle">Portfólio Profissional</span>
+            <h1>GAME DESIGNER <br> <span class="outline-text">& MANAGER</span></h1>
+            <p>Especialista em criar experiências imersivas e gerenciar comunidades de alto impacto no ecossistema Roblox.</p>
+            <a href="#projects" class="btn-primary">Ver Trabalhos</a>
+        </div>
+        <div class="decoration-box box-1"></div>
+        <div class="decoration-box box-2"></div>
+    </header>
+
+    <section id="about" class="container">
+        <div class="section-header">
+            <h2>01. Sobre Mim</h2>
+            <div class="line"></div>
+        </div>
+        <div class="about-grid">
+            <div class="about-text">
+                <p>Olá, sou o Joca. Atuo transformando ideias abstratas em mecânicas sólidas. Meu foco é o profissionalismo e a entrega de resultados, garantindo que a visão do projeto seja executada com perfeição.</p>
+                
+                <div class="skills-wrapper">
+                    <h3>Skills & Foco</h3>
+                    <ul class="skills-list">
+                        <li><i class="fas fa-check"></i> Game Design</li>
+                        <li><i class="fas fa-check"></i> Project Management</li>
+                        <li><i class="fas fa-check"></i> Community Lead</li>
+                        <li><i class="fas fa-check"></i> Marketing Strategy</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="about-visual">
+                <img src="assets/profile.gif" alt="Joca Profile" class="profile-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'fallback-text\'>SEM FOTO</div>'">
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="container">
+        <div class="section-header">
+            <h2>02. Projetos Selecionados</h2>
+            <div class="line"></div>
+        </div>
+
+        <div class="projects-grid">
+            <article class="project-card">
+                <div class="card-image">
+                    <img src="assets/afs.png" alt="Anime Fighters" loading="lazy">
+                </div>
+                <div class="card-content">
+                    <span class="cat">Roblox • Anime</span>
+                    <h3>Anime Fighters</h3>
+                    <p>Gerenciamento e design para um dos maiores sucessos da plataforma.</p>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="card-image">
+                    <img src="assets/rs.png" alt="Rise Seas" loading="lazy">
+                </div>
+                <div class="card-content">
+                    <span class="cat">RPG • Adventure</span>
+                    <h3>Rise Seas</h3>
+                    <p>Supervisão de projeto, updates e engajamento da comunidade.</p>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="card-image">
+                    <img src="assets/star.gif" alt="StarX" loading="lazy">
+                </div>
+                <div class="card-content">
+                    <span class="cat">Development</span>
+                    <h3>StarX</h3>
+                    <p>Colaboração estratégica e desenvolvimento de conceitos.</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section id="contact" class="container contact-section">
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <h2>Vamos Conversar?</h2>
+                <p>Estou disponível para novos projetos. Envie uma mensagem direta para meu Discord através deste formulário.</p>
+                <div class="discord-tag">
+                    <i class="fab fa-discord"></i> whoisjoca
+                </div>
+            </div>
+
+            <form id="discord-form" class="contact-form">
+                <div class="input-group">
+                    <input type="text" id="name" required placeholder=" ">
+                    <label for="name">Nome / Empresa</label>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="contact_info" required placeholder=" ">
+                    <label for="contact_info">Seu Contato (Discord/Email)</label>
+                </div>
+                <div class="input-group">
+                    <textarea id="message" required placeholder=" " rows="4"></textarea>
+                    <label for="message">Mensagem</label>
+                </div>
+                <button type="submit" class="btn-submit">ENVIAR VIA DISCORD</button>
+                <p id="status-message"></p>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Joca, Todos os direitos reservados a The Dog.</p>
+    </footer>
+
+    <script src="script/main.js"></script>
+</body>
+</html>
